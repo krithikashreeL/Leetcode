@@ -8,7 +8,7 @@ class Solution:
             if nextnum == 3*ugly_list[i3] : i3+=1
             if nextnum == 5*ugly_list[i5] : i5+=1
             ugly_list.append(nextnum)
-            print(nextnum)
+          #  print(nextnum)
         return ugly_list[-1]
             
             
