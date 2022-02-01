@@ -8,6 +8,4 @@ class Solution:
         for i in stones:
             if i in dict:
                 count+=1
-            else:
-                continue
         return count
