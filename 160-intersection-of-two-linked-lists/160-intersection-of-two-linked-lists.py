@@ -6,20 +6,18 @@
 
 class Solution:
     def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> Optional[ListNode]:
-        if headA == None or headB == None: return None
         
-        a_pointer = headA
-        b_pointer = headB
+        pointerA = headA
+        pointerB = headB
         
-        while(a_pointer != b_pointer):
-            if a_pointer == None:
-                a_pointer = headB
+        while pointerA != pointerB:
+            if pointerA != None:
+                pointerA = pointerA.next
             else:
-                a_pointer = a_pointer.next
-            if b_pointer == None:
-                b_pointer = headA
+                pointerA = headB
+            if pointerB != None:
+                pointerB = pointerB.next         
             else:
-                b_pointer = b_pointer.next
+                pointerB = headA
             
-        return a_pointer
-        
+        return pointerA
