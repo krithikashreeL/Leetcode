@@ -1,17 +1,16 @@
 class Solution:
     def isIsomorphic(self, s: str, t: str) -> bool:
-        map_s ={}
-        map_t = {}
-        n = len(s)
-        m = len(t)
-        if m != n : return False
-        for i in range(0,n):
-            if((s[i] not in map_s) and (t[i] not in map_t)):
-                map_s[s[i]] = t[i]
-                map_t[t[i]] = s[i]
-            elif map_s.get(s[i]) != t[i] or map_t.get(t[i])!= s[i]:
-                return False
+        s_set = {}
+        t_set = {}
+        
+        for i in range(len(s)):
+            
+            if (s[i] not in t_set) and (t[i] not in s_set) :
+                t_set[s[i]] = t[i]
+                s_set[t[i]] = s[i]
+            elif t_set.get(s[i]) != t[i] or s_set.get(t[i]) != s[i]:
+                    # print (s[i],t[i])
+                    return False
+        
+        # print(s_set,t_set)
         return True
-        
-        
-        
