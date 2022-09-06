@@ -8,7 +8,7 @@ class Solution:
             elif ops[i] == 'C':
                 result.pop()           
             elif ops[i] =='+':
-                result.append(result[len(result) - 1]+ result[len(result) - 2])
+                result.append(result[- 1]+ result[ - 2])
             
             else:
                 result.append(int(ops[i]))
