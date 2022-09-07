@@ -8,14 +8,17 @@ class Node:
 
 class Solution:
     def preorder(self, root: 'Node') -> List[int]:
-        output = []
         
-        def helper(root,output):
-            if root!= None:
-                output.append(root.val)
-                if root and root.children:
-                    for child in root.children:
-                        helper(child,output)
-                return output
-        return helper(root,output)
+        result = []
+        
+        def recursive_traversal(root,result):
+            if root:
+                result.append(root.val)
+            
+                for child in root.children:
+                    recursive_traversal(child,result)
+            return result
+        
+        return recursive_traversal(root,result)
+        
         
