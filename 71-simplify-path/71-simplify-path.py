@@ -11,5 +11,6 @@ class Solution:
                     stack.pop()
             else:
                 stack.append(x[i])
-            
+        
+        print(stack)
         return("/"+"/".join(stack))
